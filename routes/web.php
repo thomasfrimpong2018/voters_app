@@ -15,12 +15,12 @@
 
 Auth::routes();
 
-
+ Route::get('/', function () {
+        return view('index');
+    });
 
 Route::group(['middleware'=>['web','auth']],function(){
-    Route::get('/', function () {
-        return view('welcome');
-    });
+   
 
 
     Route::get('/home', function(){
