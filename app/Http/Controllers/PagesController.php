@@ -30,5 +30,10 @@ class PagesController extends Controller
 
         return view('admin.addSecretary');
     }
-    
+
+    public function treasurer(){
+
+        return view('admin.addTreasurer');
+    }
+
 }
