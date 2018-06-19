@@ -36,4 +36,10 @@ class PagesController extends Controller
         return view('admin.addTreasurer');
     }
 
+    public function organiser(){
+
+        return view('admin.addOrganiser');
+    }
+
+
 }
