@@ -2,7 +2,7 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
+              <a class="nav-link active" href="">
                 <span data-feather="home"></span>
                 Add A Presidential Aspirant<span class="sr-only">(current)</span>
               </a>
@@ -14,7 +14,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="/organniser">
                 <span data-feather="shopping-cart"></span>
                 Add A Organiser Aspirant
               </a>
