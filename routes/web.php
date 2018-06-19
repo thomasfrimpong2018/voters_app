@@ -34,3 +34,5 @@ Route::post('/addPresident','HomeController@addPresident');
 Route::post('/addSecretary','HomeController@addSecretary');
 
 Route::post('/addTreasurer','HomeController@addTreasurer');
+
+Route::post('/addOrganiser','HomeController@addOrganiser');
