@@ -25,4 +25,10 @@ class PagesController extends Controller
         }
 
     }
+
+    public function secretary(){
+
+        return view('admin.addSecretary');
+    }
+    
 }
