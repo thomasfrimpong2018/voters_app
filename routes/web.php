@@ -25,6 +25,8 @@ Route::get('/home','PagesController@index');
 
 Route::get('/secretary','PagesController@secretary');
 
+Route::get('/treasurer','PagesController@treasurer');
+
 Route::post('/addPresident','HomeController@addPresident');
 
 Route::post('/addSecretary','HomeController@addSecretary');
