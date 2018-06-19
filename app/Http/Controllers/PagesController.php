@@ -40,6 +40,9 @@ class PagesController extends Controller
 
         return view('admin.addOrganiser');
     }
+    public function president(){
 
+        return view('admin.addPresident');
+    }
 
 }
