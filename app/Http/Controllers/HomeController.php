@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\President;
 use App\Secretary;
+use App\Treasurer;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -100,6 +101,43 @@ class HomeController extends Controller
 
         return redirect('/home')->with('success',$president->name.' Successfully added as President');
     }
+
+
+    public function addTreasurer(Request $request)
+    {
+     $this->validate($request, [
+         'name'=>'required',
+         'cover_image'=>'image|nullable|max:1999'
+     ]);
+ 
+ 
+ 
+      //Handle File Upload
+      if($request->hasFile('cover_image')){
+ 
+         //Get Filename with extension
+         $fileNameWithExt=$request->file('cover_image')->getClientOriginalName();
+         //Get just file
+         $filename=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+         //Get the ext
+         $extension=$request->file('cover_image')->getClientOriginalExtension();
+         //Filename to store
+         $fileNameToStore=$filename.'_'.time().'.'.$extension;
+         //Upload Image
+         $path=$request->file('cover_image')->storeAs('public/cover_image',$fileNameToStore);
+ 
+     }else{
+           $fileNameToStore='noimage.jpg';
+     }
+      
+     $treasurer=new Treasurer;
+     $treasurer->name=$request->name;
+     $treasurer->picture= $fileNameToStore;
+     $treasurer->save();
+ 
+     return redirect('/treasurer')->with('success',$treasurer->name.' Successfully added as Treasurer');
+   }
+ 
 
 
     
