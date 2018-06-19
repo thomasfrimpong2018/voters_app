@@ -23,4 +23,10 @@ Auth::routes();
    
 Route::get('/home','PagesController@index');
 
+Route::get('/secretary','PagesController@secretary');
+
 Route::post('/addPresident','HomeController@addPresident');
+
+Route::post('/addSecretary','HomeController@addSecretary');
+
+Route::post('/addTreasurer','HomeController@addTreasurer');
