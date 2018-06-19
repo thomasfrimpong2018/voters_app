@@ -8,7 +8,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="/secretary">
                 <span data-feather="file"></span>
                 Add A Secretarial Aspirant
               </a>
