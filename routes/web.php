@@ -19,20 +19,8 @@ Auth::routes();
         return view('index');
     });
 
-Route::group(['middleware'=>['web','auth']],function(){
+
    
+Route::get('/home','PagesController@index');
 
-
-    Route::get('/home', function(){
-
-     if(Auth::user()->admin == 0){
-         return view('home');
-
-     }else{
-         $users['users']=\App\User::all();
-        return view('adminhome',$users); 
-     }
-
-
-  });
-});
+Route::post('/addPresident','HomeController@addPresident');
