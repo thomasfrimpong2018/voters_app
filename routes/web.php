@@ -19,7 +19,7 @@ Auth::routes();
         return view('index');
     });
 
-
+Route::get('/president','PagesController@president');
    
 Route::get('/home','PagesController@index');
 
