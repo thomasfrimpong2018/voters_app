@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\President;
+use App\Secretary;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -23,10 +24,43 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function addSecretary()
-    {
-        return view('home');
+    public function addSecretary(Request $request)
+   {
+    $this->validate($request, [
+        'name'=>'required',
+        'cover_image'=>'image|nullable|max:1999'
+    ]);
+
+
+
+     //Handle File Upload
+     if($request->hasFile('cover_image')){
+
+        //Get Filename with extension
+        $fileNameWithExt=$request->file('cover_image')->getClientOriginalName();
+        //Get just file
+        $filename=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+        //Get the ext
+        $extension=$request->file('cover_image')->getClientOriginalExtension();
+        //Filename to store
+        $fileNameToStore=$filename.'_'.time().'.'.$extension;
+        //Upload Image
+        $path=$request->file('cover_image')->storeAs('public/cover_image',$fileNameToStore);
+
+    }else{
+          $fileNameToStore='noimage.jpg';
     }
+     
+    $secretary=new Secretary;
+    $secretary->name=$request->name;
+    $secretary->picture= $fileNameToStore;
+    $secretary->save();
+
+    return redirect('/secretary')->with('success',$secretary->name.' Successfully added as Secretary');
+  }
+
+       
+    
 
    
 
