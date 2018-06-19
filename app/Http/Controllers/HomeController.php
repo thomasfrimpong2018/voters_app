@@ -100,7 +100,7 @@ class HomeController extends Controller
         $president->picture= $fileNameToStore;
         $president->save();
 
-        return redirect('/home')->with('success',$president->name.' Successfully added as President');
+        return redirect('/president')->with('success',$president->name.' Successfully added as President');
     }
 
 
@@ -176,6 +176,10 @@ class HomeController extends Controller
 
     return redirect('/organiser')->with('success',$organiser->name.' Successfully added as Organiser');
   }
+
+
+
+  
 
 
 
