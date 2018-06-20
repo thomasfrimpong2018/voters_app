@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    My Voting App
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -93,10 +93,13 @@
                                   
                                           <main role="main" class="col-md-11 ml-sm-auto col-lg-11 px-4">
                                             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                                              <center><h1 class="h2">Display the Voting Results </h1></center> 
-                                            </div>
-                                              <div class="alert alert-success">You Have Completed the Voting Processes</div>
+                                              <h1 class="h2">Display the Voting Results </h1></div> 
+                                            
+                                             @if(Auth::user()->admin == 0)
+                                            <div class="alert alert-success">You Have Completed the Voting Processes</div>
+                                              @else
                                               
+                                              @endif
                                             
                                             
                                             <div class="btn-toolbar mb-2 mb-md-0">
@@ -108,10 +111,10 @@
                                                   </a>
                                                 </div>
                                                 <div class="btn-group mr-2">
-                                                  <button class="btn btn-sm btn-outline-primary ">
+                                                  <a class="btn btn-sm btn-outline-primary " href="/secretaryvotes">
                                                         <span data-feather="calendar"></span>
                                                        Secretary's Voting Results
-                                                    </button>
+                                                  </a>
                                                 </div>
                                                 <div class="btn-group mr-2">
                                                     <button class="btn btn-sm btn-outline-secondary ">
@@ -124,7 +127,9 @@
                                                         
                                                       </div>
                                               </div> <br>
-                                              @yield('content')
+                                               @yield('content')
+                                              @if(Auth::user()->admin == 1)<a class="btn btn-sm btn-default " href="/home">Return to Home Page</a> @endif
+                                             
                                               
                                               
                                             </main>
