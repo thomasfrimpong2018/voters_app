@@ -21,7 +21,9 @@ Auth::routes();
 
 
 
+Route::post('/voteorganiser/{vote}','HomeController@voteorganiser')  ;
 
+Route::get('/confirm-organiser/{organiser}','PagesController@confirmOrganiser');
 
 
 Route::post('/votesecretary/{vote}','HomeController@votesecretary')  ;
