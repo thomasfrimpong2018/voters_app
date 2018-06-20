@@ -28,16 +28,16 @@
                                 <div class="btn-toolbar mb-2 mb-md-0">
                                 
                                       <div class="btn-group mr-2">
-                                      <button class="btn btn-sm btn-outline-secondary ">
+                                      <a class="btn btn-sm btn-outline-secondary " href="/presidentvotes">
                                         <span data-feather="calendar"></span>
                                         President's Voting Results
-                                      </button>
+                                      </a>
                                     </div>
                                     <div class="btn-group mr-2">
-                                      <button class="btn btn-sm btn-outline-primary ">
+                                      <a class="btn btn-sm btn-outline-primary " href="/secretaryvotes">
                                             <span data-feather="calendar"></span>
                                            Secretary's Voting Results
-                                        </button>
+                                    </a>
                                     </div>
                                     <div class="btn-group mr-2">
                                         <button class="btn btn-sm btn-outline-secondary ">
