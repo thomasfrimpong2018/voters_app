@@ -46,6 +46,11 @@ class PagesController extends Controller
             $treasurer=Treasurer::all();
             return view('user.treasurer-vote')->with('treasurers',$treasurer);
             }
+            elseif(($user->president_vote== '1')&& ($user->secretary_vote== '1')&& ($user->organiser_vote== '1') &&  ($user->treasurer_vote== '1')){
+
+                return view('user.results');
+
+            }
 
 
 
@@ -94,6 +99,12 @@ class PagesController extends Controller
 
         $organiser=Organiser::find($id);
         return view('user.confirm-organiser')->with('organiser',$organiser);
+    }
+
+    public function confirmTreasurer($id){
+
+        $treasurer=Treasurer::find($id);
+        return view('user.confirm-treasurer')->with('treasurer',$treasurer);
     }
 
 }
