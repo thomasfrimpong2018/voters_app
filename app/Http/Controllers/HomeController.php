@@ -243,5 +243,28 @@ public function voteorganiser(Request $request){
     
     }
 
+
+
+    public function votetreasurer(Request $request){
+        //code to increase vote of treasurer
+        $id= $request->id;
+        $vote=Treasurer::find($id);
+        $num=$request->votes;
+        $num++;
+        $vote->votes=$num;
+        $vote->save();
+        
+        //code to indicate user has voted for treasurer
+        $id=auth()->user()->id;
+        $user=User::find($id);
+        $user->treasurer_vote=1;
+        $user->save();
+        
+        
+        return redirect('/home');
+        
+        
+        }
+
     
 }
