@@ -22,7 +22,7 @@
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h2 class="display-4">Vote For A Secretary Aspirant</h2>
-      <div class="alert alert-success">You Have Voted For The President</div>
+      <div class="alert alert-success">You Have Voted For Your President</div>
     </div>
 
     <div class="container">
