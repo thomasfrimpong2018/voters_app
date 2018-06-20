@@ -266,5 +266,17 @@ public function voteorganiser(Request $request){
         
         }
 
+
+   //function to display results of the presidential votes
+
+   public function presidentVotes(){
+      $presidents=President::orderBy('votes','desc')->get();
+
+      return view('user.president-results')->with('presidents',$presidents);
+
+
+   }
+
+
     
 }
