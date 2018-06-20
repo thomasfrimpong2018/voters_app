@@ -199,7 +199,7 @@ class HomeController extends Controller
     return redirect('/home');
   }
 
-  
+
 
 public function votesecretary(Request $request){
 //code to increase vote of secretary
@@ -210,7 +210,7 @@ $num++;
 $vote->votes=$num;
 $vote->save();
 
-//code to indicate user has voted for president
+//code to indicate user has voted for secretary
 $id=auth()->user()->id;
 $user=User::find($id);
 $user->secretary_vote=1;
@@ -221,6 +221,27 @@ return redirect('/home');
 
 
 }
+
+public function voteorganiser(Request $request){
+    //code to increase vote of organiser
+    $id= $request->id;
+    $vote=Organiser::find($id);
+    $num=$request->votes;
+    $num++;
+    $vote->votes=$num;
+    $vote->save();
+    
+    //code to indicate user has voted for organiser
+    $id=auth()->user()->id;
+    $user=User::find($id);
+    $user->organiser_vote=1;
+    $user->save();
+    
+    
+    return redirect('/home');
+    
+    
+    }
 
     
 }
