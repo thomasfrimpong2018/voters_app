@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\President;
+use App\Secretary;
+use App\Treasurer;
+use App\Organiser;
 use Illuminate\Http\Request;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -19,9 +23,31 @@ class PagesController extends Controller
 
         if(Auth::user()->admin == 0){
 
-            $presidents=President::all();
+            //this ensures no one votes twice in the presidential votes
+            $id=auth()->user()->id;
+            $user=User::find($id);
+            if($user->president_vote != '1'){
 
-        return view('user.president-vote')->with('presidents',$presidents);
+                $presidents=President::all();
+             return view('user.president-vote')->with('presidents',$presidents);
+            }
+            elseif($user->secretary_vote != '1'){
+               $secretary=Secretary::all();
+               return view('user.secretary-vote')->with('secretaries',$secretary);
+              
+
+            }
+            elseif($user->organiser_vote != '1'){
+
+            }
+           elseif($user->treasurer_vote != '1'){
+
+            }
+
+
+
+
+
    
         }else{
             $users['users']=\App\User::all();
