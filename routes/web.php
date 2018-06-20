@@ -19,7 +19,9 @@ Auth::routes();
         return view('index');
     });
 
- Route::post('/voteortreasurer/{vote}','HomeController@votetreasurer')  ;
+ Route::get('/presidentvotes','HomeController@presidentVotes') ;  
+
+ Route::post('/votetreasurer/{vote}','HomeController@votetreasurer')  ;
 
  Route::get('/confirm-treasurer/{treasurer}','PagesController@confirmTreasurer');
 
