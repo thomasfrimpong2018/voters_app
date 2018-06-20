@@ -277,6 +277,16 @@ public function voteorganiser(Request $request){
 
    }
 
+//function to display results of the secretary votes
+
+public function secretaryVotes(){
+    $secretaries=Secretary::orderBy('votes','desc')->get();
+
+    return view('user.secretary-results')->with('secretaries',$secretaries);
+
+
+ }
+
 
     
 }
