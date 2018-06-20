@@ -199,7 +199,28 @@ class HomeController extends Controller
     return redirect('/home');
   }
 
+  
 
+public function votesecretary(Request $request){
+//code to increase vote of secretary
+$id= $request->id;
+$vote=Secretary::find($id);
+$num=$request->votes;
+$num++;
+$vote->votes=$num;
+$vote->save();
+
+//code to indicate user has voted for president
+$id=auth()->user()->id;
+$user=User::find($id);
+$user->secretary_vote=1;
+$user->save();
+
+
+return redirect('/home');
+
+
+}
 
     
 }
