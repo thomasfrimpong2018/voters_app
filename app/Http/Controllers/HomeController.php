@@ -7,6 +7,7 @@ use App\Treasurer;
 use App\Organiser;
 use Auth;
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -179,7 +180,24 @@ class HomeController extends Controller
 
 
 
-  
+  public function votepresident(Request $request){
+//code to increase vote of president
+    $id= $request->id;
+    $vote=President::find($id);
+    $num=$request->votes;
+    $num++;
+    $vote->votes=$num;
+    $vote->save();
+
+    //code to indicate user has voted for president
+    $id=auth()->user()->id;
+    $user=User::find($id);
+    $user->president_vote=1;
+    $user->save();
+
+
+    return redirect('/home');
+  }
 
 
 
