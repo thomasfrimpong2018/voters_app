@@ -38,10 +38,13 @@ class PagesController extends Controller
 
             }
             elseif($user->organiser_vote != '1'){
+                $organiser=Organiser::all();
+               return view('user.organiser-vote')->with('organisers',$organiser); 
 
             }
            elseif($user->treasurer_vote != '1'){
-
+            $treasurer=Treasurer::all();
+            return view('user.treasurer-vote')->with('treasurers',$treasurer);
             }
 
 
@@ -80,5 +83,11 @@ class PagesController extends Controller
         $president=President::find($id);
         return view('user.confirm-president')->with('president',$president);
     }
+
+    public function confirmSecretary($id){
+
+        $secretary=Secretary::find($id);
+        return view('user.confirm-secretary')->with('secretary',$secretary);
+    } 
 
 }
