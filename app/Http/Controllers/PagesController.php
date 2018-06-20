@@ -47,8 +47,8 @@ class PagesController extends Controller
             return view('user.treasurer-vote')->with('treasurers',$treasurer);
             }
             elseif(($user->president_vote== '1')&& ($user->secretary_vote== '1')&& ($user->organiser_vote== '1') &&  ($user->treasurer_vote== '1')){
-
-                return view('user.results');
+                $presidents=President::orderBy('votes','desc')->get();
+                return view('user.president-results')->with('presidents',$presidents);
 
             }
 
