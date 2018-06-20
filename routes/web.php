@@ -19,6 +19,10 @@ Auth::routes();
         return view('index');
     });
 
+
+    
+Route::get('/secretaryvotes','HomeController@secretaryVotes') ; 
+
  Route::get('/presidentvotes','HomeController@presidentVotes') ;  
 
  Route::post('/votetreasurer/{vote}','HomeController@votetreasurer')  ;
