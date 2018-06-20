@@ -90,4 +90,10 @@ class PagesController extends Controller
         return view('user.confirm-secretary')->with('secretary',$secretary);
     } 
 
+    public function confirmOrganiser($id){
+
+        $organiser=Organiser::find($id);
+        return view('user.confirm-organiser')->with('organiser',$organiser);
+    }
+
 }
