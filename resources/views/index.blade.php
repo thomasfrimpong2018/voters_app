@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 75px;
             }
 
             .links > a {
@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Welcome to the  Voting App
+                    S.R.C Executives Voting <br> Application
                 </div>
 
                 
