@@ -15,17 +15,17 @@
                     @endif
 
      <div class="container">
-        Are you Sure You Want to Vote For '{{$secretary->name}}' ? <br>
+        <center>Are you Sure You Want to Vote For '{{$secretary->name}}' ? </center><br><br>
 
       {!!Form::open(['action'=>['HomeController@votesecretary',$secretary->id],'method'=>'POST'])!!}
       {{Form::hidden('id',$secretary->id)}}
       {{Form::hidden('votes',$secretary->votes)}}
-      {{Form::submit('Yes',['class'=>'btn btn-success'])}}
+      {{Form::submit('Yes',['class'=>'btn btn-block btn-success'])}}
 
-      {!!Form::close()!!}
+      {!!Form::close()!!}<br>
 
-      <div  style="float:left"> 
-      <a href="/home" class="btn btn-danger  ">No</a>
+      <div> 
+      <a href="/home" class="btn btn-block btn-danger  ">No</a>
       </div>
 
       <footer class="pt-4 my-md-5 pt-md-5 border-top">
