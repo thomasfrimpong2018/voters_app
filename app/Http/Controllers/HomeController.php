@@ -292,7 +292,17 @@ public function secretaryVotes(){
 public function organiserVotes(){
     $organisers=Organiser::orderBy('votes','desc')->get();
 
-    return view('user.organiser-results')->with('sorganisers',$organisers);
+    return view('user.organiser-results')->with('organisers',$organisers);
+
+
+ }
+
+ //function to display results of the treasurer votes
+
+public function treasurerVotes(){
+    $treasurers=Treasurer::orderBy('votes','desc')->get();
+
+    return view('user.treasurer-results')->with('treasurers',$treasurers);
 
 
  }
