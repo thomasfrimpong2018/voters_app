@@ -19,7 +19,7 @@ Auth::routes();
         return view('index');
     });
 
-
+Route::get('/organiservotes','HomeController@organiserVotes') ; 
     
 Route::get('/secretaryvotes','HomeController@secretaryVotes') ; 
 
