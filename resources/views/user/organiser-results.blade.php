@@ -5,7 +5,7 @@
     <div class="container">
       <h4>The Results Of The Organiser Elections</h4>
         <div class="card-deck mb-3 text-center">
-            @foreach($sorganisers as $organiser)
+            @foreach($organisers as $organiser)
           <div class="card mb-4 box-shadow">
           
             <div class="card-body">
