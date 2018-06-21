@@ -13,6 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
+               
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
@@ -64,7 +65,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background-image: url('image/GB.jpg');">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
