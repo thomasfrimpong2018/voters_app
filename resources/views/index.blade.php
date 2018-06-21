@@ -80,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    S.R.C Executives Voting <br> Application
+                    S.R.C Elections Voting <br> Application
                 </div>
 
                 
