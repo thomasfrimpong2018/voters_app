@@ -18,6 +18,7 @@ Auth::routes();
  Route::get('/', function () {
         return view('index');
     });
+ Route::get('/treasurervotes','HomeController@treasurerVotes') ; 
 
 Route::get('/organiservotes','HomeController@organiserVotes') ; 
     
