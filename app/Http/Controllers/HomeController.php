@@ -287,6 +287,14 @@ public function secretaryVotes(){
 
  }
 
+//function to display results of the organiser votes
 
+public function organiserVotes(){
+    $organisers=Organiser::orderBy('votes','desc')->get();
+
+    return view('user.organiser-results')->with('sorganisers',$organisers);
+
+
+ }
     
 }
