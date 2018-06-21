@@ -40,13 +40,13 @@
                                     </a>
                                     </div>
                                     <div class="btn-group mr-2">
-                                        <button class="btn btn-sm btn-outline-secondary ">
+                                        <a class="btn btn-sm btn-outline-secondary " href="/organiservotes">
                                                 <span data-feather="calendar"></span>
                                                 Organiser's Voting Results
-                                      </button>
+                                        </a>
                                     </div>
                                     <div class="btn-group mr-2">
-                                            <button class="btn btn-sm btn-outline-warning">Treasurer's Results</button>
+                                            <a class="btn btn-sm btn-outline-warning" href="/treasurervotes" >Treasurer's Results</a>
                                             
                                           </div>
                                   </div> 
