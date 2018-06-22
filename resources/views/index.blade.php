@@ -80,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    S.R.C Elections Voting <br> Application
+                   <h4> S.R.C Elections Voting <br> Application</h4>
                 </div>
 
                 
