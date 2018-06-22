@@ -65,22 +65,30 @@ class PagesController extends Controller
     }
 
     public function secretary(){
+        if(Auth::user()->admin == 1){
 
         return view('admin.addSecretary');
-    }
+      }
+   }
 
     public function treasurer(){
 
+    if(Auth::user()->admin == 1){
         return view('admin.addTreasurer');
-    }
+      }
+   }
 
     public function organiser(){
+        if(Auth::user()->admin == 1){
 
         return view('admin.addOrganiser');
+      }
     }
     public function president(){
+        if(Auth::user()->admin == 1){
 
         return view('admin.addPresident');
+       }
     }
 
     public function confirmPresident($id){
